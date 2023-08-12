@@ -12,4 +12,4 @@ else:
     print("{} arguments:".format(count))
 
 for arg in range(count):
-        print("{}: {}".format(arg + 1, sys.argv[arg + 1]))
+    print("{}: {}".format(arg + 1, sys.argv[arg + 1]))
