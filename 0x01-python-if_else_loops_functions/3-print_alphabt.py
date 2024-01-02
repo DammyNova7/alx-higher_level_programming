@@ -2,5 +2,5 @@
 
 for alphabets in range(97, 123):
     if alphabets == 101 or alphabets == 113:
-	    continue
+        continue
     print("{:c}".format(alphabets), end="")
