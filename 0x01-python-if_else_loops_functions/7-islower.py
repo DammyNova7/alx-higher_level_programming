@@ -3,7 +3,7 @@
 # Function checks for lowercase character
 
 def islower(c):
-    if c >= 'a' and c <= 'z':
+    if ord(c) >= 97 and ord(c) <= 122:
         return True
     else:
         return False
