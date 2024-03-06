@@ -2,23 +2,25 @@
 
 if __name__ == "__main__":
     import sys
-    import calculator_1
+    from calculator_1 import add, sub, mul, div
 
     args = sys.argv
     n = len(args) - 1
+    a = int(args[1])
+    b = int(args[3])
 
     if n != 3:
         print(f"Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
     else:
         if args[2] == '+':
-            print("{} + {} = {:d}".format(args[1], args[3], calculator_1.add(int(args[1]), int(args[3]))))
+            print("{} + {} = {:d}".format(a, b, add(a, b)))
         elif args[2] == '-':
-            print("{} - {} = {:d}".format(args[1], args[3], calculator_1.sub(int(args[1]), int(args[3]))))
+            print("{} - {} = {:d}".format(a, b, sub(a, b)))
         elif args[2] == '*':
-            print("{} * {} = {:d}".format(args[1], args[3], calculator_1.mul(int(args[1]), int(args[3]))))
+            print("{} * {} = {:d}".format(a, b, mul(a, b)))
         elif args[2] == '/':
-            print("{} / {} = {:d}".format(args[1], args[3], calculator_1.div(int(args[1]), int(args[3]))))
+            print("{} / {} = {:d}".format(a, b, div(a, b)))
         else:
             print(f"Unknown operator. Available operators: +, -, * and /")
             sys.exit(1)
