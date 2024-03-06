@@ -7,7 +7,7 @@ if __name__ == "__main__":
     args = sys.argv
     n = len(args) - 1
 
-    if n > 3:
+    if n != 3:
         print(f"Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
     else:
