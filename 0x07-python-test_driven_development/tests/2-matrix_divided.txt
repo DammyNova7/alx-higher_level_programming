@@ -1,0 +1,70 @@
+#Test matrices
+>>> def matrix_divided(matrix, div):
+...    new_matrix = []
+...    for row in matrix:
+...        size = len(matrix[0])
+...        new_matrix_row = []
+...        for i in row:
+...            if div == 0:
+...                raise ZeroDivisionError("division by zero")
+...            if not isinstance(i, (int, float)):
+...                raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+...            if len(row) > size or len(row) < size:
+...                raise TypeError("Each row of the matrix must have the same size")
+...            if not isinstance(div, (int, float)):
+...                raise TypeError("div must be a number")
+...            new_matrix_row.append(round(i / div, 2))
+...        new_matrix.append(new_matrix_row)
+...    return (new_matrix)
+>>> matrix = [
+...     [2, 4, 6, 8, 5],
+...     [1, 3, 5, 7.5, 8.9],
+...     [10, 5, 15, 25.5, 30],
+...     [1, 4, 6, 7, 9]
+... ]
+>>> matrix_2 = [
+...     [3.45, 1.666, 6, 7],
+...     [4, 8, 5, 6]
+... ]
+>>> matrix_3 = [
+...     [67, 1, 5],
+...     ["me", 9, 5]
+... ]
+>>> matrix_4 = [
+...     [2, 4, 5, 6],
+...     [1, 4, 6, 9],
+...     [1, 3, 7, 7, 9, 4]
+... ]
+>>> matrix_5 = [
+...     [],
+...     []
+... ]
+>>> matrix_7 = []
+>>> print(matrix_divided(matrix, 5))
+[[0.4, 0.8, 1.2, 1.6, 1.0], [0.2, 0.6, 1.0, 1.5, 1.78], [2.0, 1.0, 3.0, 5.1, 6.0], [0.2, 0.8, 1.2, 1.4, 1.8]]
+>>> print(matrix_divided(matrix, 10))
+[[0.2, 0.4, 0.6, 0.8, 0.5], [0.1, 0.3, 0.5, 0.75, 0.89], [1.0, 0.5, 1.5, 2.55, 3.0], [0.1, 0.4, 0.6, 0.7, 0.9]]
+>>> print(matrix_divided(matrix, 0))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/oxnova/Github/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 17, in matrix_divided
+    raise ZeroDivisionError("division by zero")
+ZeroDivisionError: division by zero
+>>> print(matrix_divided(matrix_2, 2))
+[[1.73, 0.83, 3.0, 3.5], [2.0, 4.0, 2.5, 3.0]]
+>>> print(matrix_divided(matrix_3, 6))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/oxnova/Github/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 19, in matrix_divided
+    raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>> print(matrix_divided(matrix_4, 4))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/oxnova/Github/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 21, in matrix_divided
+    raise TypeError("Each row of the matrix must have the same size")
+TypeError: Each row of the matrix must have the same size
+>>> print(matrix_divided(matrix_5, 2))
+[[], []]
+>>> print(matrix_divided(matrix_7, 3))
+[]
