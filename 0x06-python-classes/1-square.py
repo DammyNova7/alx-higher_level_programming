@@ -14,4 +14,4 @@ class Square:
         """
         Instantiation of the square class
         """
-        self._size = size
+        self.__size = size
