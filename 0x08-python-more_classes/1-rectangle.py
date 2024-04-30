@@ -7,14 +7,14 @@ class Rectangle:
     """ Rectangle class with width and height instance attributes """
     def __init__(self, width=0, height=0):
         """ Instantiation of the class objects """
-        self.__width = width
-        self.__height = height
-   
+        self.width = width
+        self.height = height
+
     @property
     def width(self):
         """ retrieves the value of width """
         return (self.__width)
-    
+
     @width.setter
     def width(self, value):
         """ sets the value of with """
@@ -28,7 +28,7 @@ class Rectangle:
     def height(self):
         """ retrieves the value of height """
         return (self.__height)
-    
+
     @height.setter
     def height(self, value):
         """ sets the value of height """
