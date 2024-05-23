@@ -1,3 +1,3 @@
 -- prints the full description of a the table first_table.
-SHOW COLUMNS FROM hbtn_0c_0 WHERE first_table;
+SELECT * FROM COLUMNS WHERE hbtn_0c_0 AND first_table;
 
