@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# A script that runs a Python script
+python3 $PYFILE
